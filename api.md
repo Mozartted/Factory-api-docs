@@ -27,6 +27,7 @@ the project api is to have the following functionality,
 - editing/updating projects
 - color coding project
 - deleting projects
+- Retrieve all Projects in a department
 - completing projects
 
 Each of these operates as described below.
@@ -34,4 +35,113 @@ Each of these operates as described below.
 ### adding projects
 The Route : "api/v1/projects/create"
 this creates new projects via post variables
-project_name,
+> POST Method
+
+- project_name
+- project_description
+- status
+- dept_id
+- image
+- color
+
+### editing/updating projects
+The Route : "api/v1/projects/{id}/update"
+his creates new projects via post variables
+> PUT Method
+
+- new_project_name
+- new_project_status
+- new_project_department (the id)
+- new_project_description
+
+### color coding projects
+The Route : "api/v1/projects/{project}/colorcode"
+his creates updates color code via post variables
+> POST Method
+
+- color
+
+### Deleting Projects
+The Route : "api/v1/projects/{project}/remove"
+This remove the project specified in {project}
+> DELETE Method
+
+### Retrieve all Project
+The Route :"api/v1/projects/{department}/all"
+This retrieves all projects in the specified {department}
+> GET Method
+
+### Retrieving Specific Project
+The Route : "api/v1/projects/{id}"
+This retrives details about the specific project
+> GET Method
+
+## The Task Api
+
+the task api is to have the following functionality,
+
+- adding tasks
+- editing/updating tasks
+- deleting tasks
+- Retrieve all tasks in a project
+- Retrieve Specific Task
+- Move tasks to different Project
+- completing tasks
+
+Each of these operates as described below.
+
+### adding tasks
+The Route : "api/v1/projects/tasks/create"
+this creates new projects via post variables
+> POST Method
+
+- task_name
+- task_description
+- task_team
+- task_project
+- task_deadline
+- task_status
+- task_start
+- task_end
+- task_lead
+
+### editing/updating tasks
+The Route : "api/v1/projects/tasks/{task}/edit"
+his creates new projects via post variables
+> PUT Method
+
+- new_task_name
+- new_task_status
+- new_task_project (the id)
+- new_task_description
+- new_task_status
+- new_task_end
+- new_task_team
+
+### Deleting tasks
+The Route : "api/v1/projects/tasks/{task}/remove"
+This remove the project specified in {task}
+> DELETE Method
+
+### Retrieve all Tasks
+The Route :"api/v1/projects/tasks/all"
+This retrieves all projects in the specified {department}
+> GET Method
+
+### Retrieving Specific Task
+The Route : "api/v1/projects/tasks/{task}"
+This retrives details about the specific task
+> GET Method
+
+### Moving Tasks to Different Project
+The Route : "api/v1/projects/tasks/{task}/move"
+This moving task to a different Project
+> PUT Method
+
+- project_id
+
+### Completing Task
+The Route: "api/v1/projects/tasks/{task}/complete"
+This sets a task to completed
+> PUT Method
+
