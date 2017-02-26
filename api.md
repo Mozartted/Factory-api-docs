@@ -33,7 +33,7 @@ the project api is to have the following functionality,
 Each of these operates as described below.
 
 ### adding projects
-The Route : "api/v1/projects/create"
+The Route : "api/v1/projects/create" -verified
 this creates new projects via post variables
 > POST Method
 
@@ -44,8 +44,8 @@ this creates new projects via post variables
 - image
 - color
 
-### editing/updating projects
-The Route : "api/v1/projects/{id}/update"
+### editing/updating projects 
+The Route : "api/v1/projects/{id}/update" -verified
 his creates new projects via post variables
 > PUT Method
 
@@ -53,26 +53,27 @@ his creates new projects via post variables
 - new_project_status
 - new_project_department (the id)
 - new_project_description
+- new_project_color
 
 ### color coding projects
-The Route : "api/v1/projects/{project}/colorcode"
+The Route : "api/v1/projects/{project}/colorcode" -verified
 his creates updates color code via post variables
 > POST Method
 
 - color
 
 ### Deleting Projects
-The Route : "api/v1/projects/{project}/remove"
+The Route : "api/v1/projects/{project}/remove" -verified
 This remove the project specified in {project}
 > DELETE Method
 
-### Retrieve all Project
-The Route :"api/v1/projects/{department}/all"
+### Retrieve all Project 
+The Route :"api/v1/projects/{department}/all" -verified
 This retrieves all projects in the specified {department}
 > GET Method
 
 ### Retrieving Specific Project
-The Route : "api/v1/projects/{id}"
+The Route : "api/v1/projects/{id}" -verified
 This retrives details about the specific project
 > GET Method
 
@@ -91,7 +92,7 @@ the task api is to have the following functionality,
 Each of these operates as described below.
 
 ### adding tasks
-The Route : "api/v1/projects/tasks/create"
+The Route : "api/v1/projects/{project}/tasks/create" -verified
 this creates new projects via post variables
 > POST Method
 
@@ -105,8 +106,8 @@ this creates new projects via post variables
 - task_end
 - task_lead
 
-### editing/updating tasks
-The Route : "api/v1/projects/tasks/{task}/edit"
+### editing/updating tasks 
+The Route : "api/v1/projects/tasks/{task}/edit" -verified
 his creates new projects via post variables
 > PUT Method
 
@@ -124,8 +125,8 @@ This remove the project specified in {task}
 > DELETE Method
 
 ### Retrieve all Tasks
-The Route :"api/v1/projects/tasks/all"
-This retrieves all projects in the specified {department}
+The Route :"api/v1/projects/{project}/tasks/all"
+This retrieves all projects in the specified {project}
 > GET Method
 
 ### Retrieving Specific Task
@@ -134,14 +135,14 @@ This retrives details about the specific task
 > GET Method
 
 ### Moving Tasks to Different Project
-The Route : "api/v1/projects/tasks/{task}/move"
+The Route : "api/v1/tasks/{task}/move"
 This moving task to a different Project
 > PUT Method
 
 - project_id
 
 ### Completing Task
-The Route: "api/v1/projects/tasks/{task}/complete"
+The Route: "api/v1/tasks/{task}/complete"
 This sets a task to completed
 > PUT Method
 
